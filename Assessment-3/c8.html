@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Multiplication Table using Do-While</title>
+
+<script>
+// Function to generate multiplication table
+function generateTable()
+{
+    // Take number from input field
+    var num = parseInt(document.getElementById("number").value);
+
+    // Initialize counter
+    var i = 1;
+
+    // Variable to store output
+    var result = "";
+
+    // do-while loop (body executes at least once)
+    do
+    {
+        result += num + " x " + i + " = " + (num * i) + "<br>";
+        i++;
+    }
+    while(i <= 10);
+
+    // Display result in HTML element
+    document.getElementById("output").innerHTML = result;
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Multiplication Table Generator</h2>
+
+<!-- Input from user -->
+Enter Number:
+<input type="number" id="number">
+
+<br><br>
+
+<!-- Button to generate table -->
+<button onclick="generateTable()">Generate Table</button>
+
+<br><br>
+
+<!-- Output area -->
+<div id="output"></div>
+
+<br><br>
+
+<p>
+Name: Rama Krishna<br>
+Reg.No: 24BDS0165
+</p>
+
+</body>
+</html>

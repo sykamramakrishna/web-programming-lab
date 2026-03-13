@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Radio Button Selection</title>
+
+<script>
+
+// Function to display selected radio button value
+function showColor()
+{
+    // Access all radio buttons using name attribute
+    var colors = document.getElementsByName("color");
+
+    var selectedColor = "";
+
+    // Loop through radio buttons
+    for(var i = 0; i < colors.length; i++)
+    {
+        // Check which radio button is selected
+        if(colors[i].checked)
+        {
+            selectedColor = colors[i].value;
+        }
+    }
+
+    // Display selected value in HTML
+    document.getElementById("result").innerHTML =
+    "Selected Color: " + selectedColor;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Select a Color</h2>
+
+<!-- Radio buttons grouped using same name -->
+
+<input type="radio" name="color" value="Red"> Red <br>
+<input type="radio" name="color" value="Green"> Green <br>
+<input type="radio" name="color" value="Blue"> Blue <br><br>
+
+<!-- Button to display selected value -->
+<button onclick="showColor()">Show Selected Color</button>
+
+<br><br>
+
+<!-- Output area -->
+<p id="result"></p>
+
+<br><br>
+
+<!-- Student Details -->
+<p>
+Name: Rama Krishna <br>
+Reg.No: 24BDS0165
+</p>
+
+</body>
+</html>

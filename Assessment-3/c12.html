@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Job Skills Validation</title>
+
+<script>
+
+// Function to validate selected skills
+function validateSkills()
+{
+    // Get all checkbox elements
+    var skills = document.getElementsByName("skill");
+
+    // Array to store selected skills
+    var selectedSkills = [];
+
+    // Loop through checkboxes using for loop with index
+    for(var i = 0; i < skills.length; i++)
+    {
+        // Check if checkbox is selected
+        if(skills[i].checked)
+        {
+            // Add selected skill to array
+            selectedSkills.push(skills[i].value);
+        }
+    }
+
+    // Validate minimum 3 selections
+    if(selectedSkills.length < 3)
+    {
+        document.getElementById("result").innerHTML =
+        "Error: Please select at least 3 skills.";
+    }
+    else
+    {
+        // Display selected skills
+        document.getElementById("result").innerHTML =
+        "Selected Skills: " + selectedSkills.join(", ");
+    }
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Select Your Job Skills</h2>
+
+<form>
+
+<input type="checkbox" name="skill" value="HTML"> HTML <br>
+<input type="checkbox" name="skill" value="CSS"> CSS <br>
+<input type="checkbox" name="skill" value="JavaScript"> JavaScript <br>
+<input type="checkbox" name="skill" value="Python"> Python <br>
+<input type="checkbox" name="skill" value="Java"> Java <br>
+
+<br>
+
+<button type="button" onclick="validateSkills()">Submit</button>
+
+</form>
+
+<br>
+
+<p id="result"></p>
+
+<br><br>
+
+<p>
+Name: Rama Krishna<br>
+Reg.No: 24BDS0165
+</p>
+
+</body>
+</html>

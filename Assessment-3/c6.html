@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Student Information System</title>
+
+<style>
+
+/* CSS Styling */
+body{
+font-family: Arial;
+background-color:#f2f2f2;
+}
+
+.container{
+width:500px;
+margin:auto;
+background:white;
+padding:20px;
+border-radius:10px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+table, th, td{
+border:1px solid black;
+padding:8px;
+text-align:center;
+}
+
+button{
+margin:5px;
+padding:8px;
+}
+
+</style>
+
+<script>
+
+/* Global array to store students */
+var students = [];
+
+/* Function to add student */
+function addStudent(form)
+{
+
+/* Getting values from form controls */
+var name = form.name.value;
+var reg = form.reg.value;
+var dept = form.dept.value;
+
+/* JavaScript object */
+var student = {
+
+name:name,
+reg:reg,
+dept:dept,
+
+/* Object method using this keyword */
+display:function(){
+return this.name + " (" + this.reg + ")";
+}
+
+};
+
+/* Adding object to array */
+students.push(student);
+
+/* Update table dynamically */
+displayStudents();
+
+/* Reset form */
+form.reset();
+
+/* Focus back to first field */
+form.name.focus();
+
+}
+
+
+/* Function to display students in table */
+function displayStudents()
+{
+
+var table = "<tr><th>Name</th><th>Register No</th><th>Department</th></tr>";
+
+/* Loop through array */
+for(var i=0;i<students.length;i++)
+{
+table += "<tr>";
+
+table += "<td>"+students[i].name+"</td>";
+table += "<td>"+students[i].reg+"</td>";
+table += "<td>"+students[i].dept+"</td>";
+
+table += "</tr>";
+}
+
+/* DOM manipulation */
+document.getElementById("studentTable").innerHTML = table;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Information System</h2>
+
+<!-- Student Form -->
+<form onsubmit="addStudent(this); return false;">
+
+Name:
+<input type="text" name="name" required>
+
+<br><br>
+
+Register Number:
+<input type="text" name="reg" required>
+
+<br><br>
+
+Department:
+<select name="dept">
+
+<option>CSE</option>
+<option>IT</option>
+<option>ECE</option>
+<option>MECH</option>
+
+</select>
+
+<br><br>
+
+<button type="submit">Add Student</button>
+
+</form>
+
+<!-- Dynamic table -->
+<table id="studentTable"></table>
+
+<br><br>
+
+<!-- Name and Register Number -->
+<p>
+Name: Rama Krishna <br>
+Reg.No: 24BDS0165
+</p>
+
+</div>
+
+</body>
+
+</html>

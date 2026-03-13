@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Checkbox Selection Counter</title>
+
+<script>
+
+// Function to count selected subjects
+function countSubjects()
+{
+    // Get all checkbox elements
+    var subjects = document.getElementsByName("subject");
+
+    // Array to store selected subjects
+    var selectedSubjects = [];
+
+    // Counter variable
+    var count = 0;
+
+    // Loop through checkbox collection
+    for(var i = 0; i < subjects.length; i++)
+    {
+        // Check if checkbox is selected
+        if(subjects[i].checked)
+        {
+            // Add subject value to array
+            selectedSubjects.push(subjects[i].value);
+
+            // Increase counter
+            count++;
+        }
+    }
+
+    // Display selected subjects and count
+    document.getElementById("result").innerHTML =
+    "Selected Subjects: " + selectedSubjects.join(", ") +
+    "<br>Total Selected: " + count;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Select Subjects</h2>
+
+<!-- Four checkboxes for subjects -->
+<input type="checkbox" name="subject" value="Mathematics"> Mathematics <br>
+<input type="checkbox" name="subject" value="Physics"> Physics <br>
+<input type="checkbox" name="subject" value="Chemistry"> Chemistry <br>
+<input type="checkbox" name="subject" value="Computer Science"> Computer Science <br><br>
+
+<!-- Button to count selected subjects -->
+<button onclick="countSubjects()">Show Selected Subjects</button>
+
+<br><br>
+
+<!-- Output display -->
+<p id="result"></p>
+
+<br><br>
+
+<!-- Student details -->
+<p>
+Name: Rama Krishna <br>
+Reg.No: 24BDS0165
+</p>
+
+</body>
+</html>

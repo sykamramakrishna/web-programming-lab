@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Print Numbers Using While Loop</title>
+
+<script>
+
+/* Function to print numbers from 1 to N */
+function printNumbers()
+{
+    /* Taking input from text field */
+    var n = document.getElementById("num").value;
+
+    /* Counter initialization */
+    var i = 1;
+
+    var output = "";
+
+    /* While loop execution with condition checking */
+    while(i <= n)
+    {
+        output += i + " ";
+        i++;   /* Counter increment */
+    }
+
+    /* Display output in HTML element */
+    document.getElementById("result").innerHTML = output;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Print Numbers from 1 to N</h2>
+
+Enter N:
+<input type="text" id="num">
+
+<br><br>
+
+<button onclick="printNumbers()">Print Numbers</button>
+
+<br><br>
+
+<p id="result"></p>
+
+<br><br>
+
+<p>
+Name: Rama Krishna <br>
+Reg.No: 24BDS0165
+</p>
+
+</body>
+
+</html>

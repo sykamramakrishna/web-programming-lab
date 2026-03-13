@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Simple Calculator</title>
+
+<script>
+
+/* Function to perform calculation */
+function calculate(operation)
+{
+
+    /* Getting values from input fields */
+    var num1 = parseFloat(document.getElementById("num1").value);
+    var num2 = parseFloat(document.getElementById("num2").value);
+
+    var result;
+
+    /* Using switch statement for different operations */
+    switch(operation)
+    {
+        case "add":
+            result = num1 + num2;
+            break;
+
+        case "subtract":
+            result = num1 - num2;
+            break;
+
+        case "multiply":
+            result = num1 * num2;
+            break;
+
+        case "divide":
+
+            /* Division by zero handling */
+            if(num2 === 0)
+            {
+                document.getElementById("result").innerHTML = "Error: Division by zero is not allowed";
+                return;
+            }
+
+            result = num1 / num2;
+            break;
+    }
+
+    /* Display result */
+    document.getElementById("result").innerHTML = "Result: " + result;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Simple Calculator</h2>
+
+<!-- Number inputs with step="any" to allow decimal values -->
+
+Number 1:
+<input type="number" id="num1" step="any">
+
+<br><br>
+
+Number 2:
+<input type="number" id="num2" step="any">
+
+<br><br>
+
+<!-- Buttons for operations -->
+
+<button onclick="calculate('add')">Add</button>
+<button onclick="calculate('subtract')">Subtract</button>
+<button onclick="calculate('multiply')">Multiply</button>
+<button onclick="calculate('divide')">Divide</button>
+
+<br><br>
+
+<!-- Result display -->
+<p id="result"></p>
+
+<br><br>
+
+<!-- Name and Register Number -->
+<p>
+Name: Rama Krishna <br>
+Reg.No: 24BDS0165
+</p>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Hello World Example</title>
+
+<script>
+
+<!-- Function declaration -->
+function showMessage()
+{
+    /* Variable declaration using var */
+    var message = "Hello, world!";
+
+    /* DOM access using getElementById */
+    var element = document.getElementById("result");
+
+    /* Using outerHTML property to change HTML content */
+    element.outerHTML = "<h3>" + message + "</h3>";
+}
+
+</script>
+
+</head>
+
+<body>
+
+<!-- Page Heading -->
+<h2>JavaScript DOM Example</h2>
+
+<!-- Button with onclick event -->
+<button onclick="showMessage()">Click Me</button>
+
+<!-- Placeholder element -->
+<p id="result"></p>
+
+<br><br>
+
+<!-- Name and Register Number -->
+<p>
+Name: Rama Krishna <br>
+Reg.No: 24BDS0165
+</p>
+
+</body>
+</html>

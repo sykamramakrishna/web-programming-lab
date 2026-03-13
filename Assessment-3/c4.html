@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Rectangle Area Calculator</title>
+
+<script>
+
+/* Function to calculate rectangle area */
+function calculateArea()
+{
+
+    /* Integer calculation using camelCase variables */
+    var lengthValue = 10;
+    var widthValue = 5;
+
+    var areaInteger = lengthValue * widthValue;
+
+    /* Float calculation (demonstrating loose typing) */
+    lengthValue = 10.5;
+    widthValue = 5.2;
+
+    var areaFloat = lengthValue * widthValue;
+
+    /* Display result using innerHTML */
+    document.getElementById("result").innerHTML =
+    "Area using integers: " + areaInteger +
+    "<br>Area using floating numbers: " + areaFloat;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Rectangle Area Calculator</h2>
+
+<!-- Button to trigger calculation -->
+<button onclick="calculateArea()">Calculate Area</button>
+
+<br><br>
+
+<!-- Output display -->
+<p id="result"></p>
+
+<br><br>
+
+<!-- Name and Register Number -->
+<p>
+Name: Rama Krishna <br>
+Reg.No: 24BDS0165
+</p>
+
+</body>
+
+</html>

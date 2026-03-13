@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dynamic Font Customization Tool</title>
+
+<script>
+
+// Function to update font properties
+function updateStyle()
+{
+    // Get message element
+    var text = document.getElementById("message");
+
+    // Get user inputs
+    var size = document.getElementById("fontSize").value;
+    var color = document.getElementById("textColor").value;
+    var bg = document.getElementById("bgColor").value;
+
+    // Apply styles dynamically
+    text.style.fontSize = size + "px";
+    text.style.color = color;
+    text.style.backgroundColor = bg;
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Dynamic Font Customization Tool</h2>
+
+<fieldset>
+
+<legend>Customize Text Style</legend>
+
+<!-- Range slider for font size -->
+Font Size:
+<input type="range" id="fontSize" min="10" max="60" value="20" oninput="updateStyle()">
+<br><br>
+
+<!-- Color picker for text color -->
+Text Color:
+<input type="color" id="textColor" value="#000000" onchange="updateStyle()">
+<br><br>
+
+<!-- Color picker for background color -->
+Background Color:
+<input type="color" id="bgColor" value="#ffffff" onchange="updateStyle()">
+
+</fieldset>
+
+<br>
+
+<!-- Message to customize -->
+<p id="message">
+This is a sample text to demonstrate dynamic font customization.
+</p>
+
+<br><br>
+
+<p>
+Name: Rama Krishna<br>
+Reg.No: 24BDS0165
+</p>
+
+</body>
+</html>

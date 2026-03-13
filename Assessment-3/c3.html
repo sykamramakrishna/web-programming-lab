@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Email Address Generator</title>
+
+<script>
+
+<!-- Function to generate email -->
+function generateEmail(form)
+{
+
+    /* Access form elements */
+    var first = form.fname.value;
+    var last = form.lname.value;
+
+    /* String concatenation to create email */
+    var email = first + "." + last + "@park.edu";
+
+    /* Display email using innerHTML */
+    document.getElementById("result").innerHTML = "Generated Email: " + email;
+
+    /* Reset the form */
+    form.reset();
+
+    /* Set focus back to first name field */
+    form.fname.focus();
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Email Address Generator</h2>
+
+<!-- Form for input -->
+<form onsubmit="generateEmail(this); return false;">
+
+First Name:
+<input type="text" name="fname" required>
+
+<br><br>
+
+Last Name:
+<input type="text" name="lname" required>
+
+<br><br>
+
+<input type="submit" value="Generate Email">
+
+</form>
+
+<br>
+
+<!-- Output area -->
+<p id="result"></p>
+
+<br><br>
+
+<!-- Name and Register Number -->
+<p>
+Name: Rama Krishna <br>
+Reg.No: 24BDS0165
+</p>
+
+</body>
+
+</html>

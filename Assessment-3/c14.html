@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Text Styling Application</title>
+
+<style>
+
+/* Predefined CSS classes */
+
+.bold{
+font-weight: bold;
+}
+
+.italic{
+font-style: italic;
+}
+
+.smallcaps{
+font-variant: small-caps;
+}
+
+</style>
+
+<script>
+
+// Apply Bold style
+function applyBold()
+{
+document.getElementById("msg").className = "bold";
+}
+
+// Apply Italic style
+function applyItalic()
+{
+document.getElementById("msg").className = "italic";
+}
+
+// Apply Small Caps style
+function applySmallCaps()
+{
+document.getElementById("msg").className = "smallcaps";
+}
+
+// Apply multiple classes together
+function applyAll()
+{
+document.getElementById("msg").className = "bold italic smallcaps";
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Text Styling Application</h2>
+
+<!-- Fieldset for grouping buttons -->
+<fieldset>
+
+<legend>Text Style Options</legend>
+
+<button onclick="applyBold()">Bold</button>
+
+<button onclick="applyItalic()">Italic</button>
+
+<button onclick="applySmallCaps()">Small Caps</button>
+
+<button onclick="applyAll()">Apply All</button>
+
+</fieldset>
+
+<br>
+
+<!-- Message to style -->
+<p id="msg">
+This is a sample message to demonstrate text styling using CSS classes.
+</p>
+
+<br><br>
+
+<p>
+Name: Rama Krishna<br>
+Reg.No: 24BDS0165
+</p>
+
+</body>
+</html>

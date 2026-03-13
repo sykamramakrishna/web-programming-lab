@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Product Order Form</title>
+
+<script>
+
+// Function to calculate total price
+function calculateTotal()
+{
+    // Get all selected checkboxes
+    var items = document.querySelectorAll("input[name='product']:checked");
+
+    var total = 0;
+
+    // Using modern for...of loop
+    for (var item of items)
+    {
+        // Convert price to number and add
+        total += parseFloat(item.value);
+    }
+
+    // Display total price
+    document.getElementById("result").innerHTML =
+    "Total Price: ₹" + total.toFixed(2);
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h2>Product Order Form</h2>
+
+<form>
+
+<!-- Fieldset 1 -->
+<fieldset>
+<legend>Fruits</legend>
+
+<input type="checkbox" name="product" value="50"> Apple (₹50)<br>
+<input type="checkbox" name="product" value="30"> Banana (₹30)<br>
+<input type="checkbox" name="product" value="60"> Mango (₹60)<br>
+
+</fieldset>
+
+<br>
+
+<!-- Fieldset 2 -->
+<fieldset>
+<legend>Beverages</legend>
+
+<input type="checkbox" name="product" value="40"> Coffee (₹40)<br>
+<input type="checkbox" name="product" value="25"> Tea (₹25)<br>
+<input type="checkbox" name="product" value="35"> Juice (₹35)<br>
+
+</fieldset>
+
+<br>
+
+<!-- Button -->
+<button type="button" onclick="calculateTotal()">Calculate Total</button>
+
+<br><br>
+
+<!-- Output -->
+<p id="result"></p>
+
+<br><br>
+
+<p>
+Name: Rama Krishna<br>
+Reg.No: 24BDS0165
+</p>
+
+</form>
+
+</body>
+</html>
